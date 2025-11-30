@@ -1,4 +1,154 @@
- git remote add origin <link> - add repo to your local git
- git pull origin <branch> - take changes from github
+Git – Common & Useful Commands
+==============================
+
+# ---------------------------------------------------------
+# INITIAL SETUP
+# ---------------------------------------------------------
+
+git init
+# Initialize a new local repository in current folder
+
+git clone <url>
+# Download (clone) a remote repository to your machine
+
+
+# ---------------------------------------------------------
+# REMOTES
+# ---------------------------------------------------------
+
+git remote add origin <url>
+# Connect your local repo to a remote (GitHub, GitLab, etc.)
+
+git remote -v
+# Show all connected remotes
+
+git remote remove origin
+# Remove remote connection
+
+
+# ---------------------------------------------------------
+# CHECKING STATUS / HISTORY
+# ---------------------------------------------------------
+
+git status
+# Show changes (modified, staged, untracked)
+
+git log
+# Show commit history
+
+git log --oneline --graph --decorate
+# Compact visual commit graph
+
+git diff
+# Show unstaged changes
+
+git diff --staged
+# Show staged changes (in index)
+
+
+# ---------------------------------------------------------
+# STAGING & COMMITTING
+# ---------------------------------------------------------
+
+git add <file>
+# Stage a single file
+
+git add .
+# Stage ALL modified/untracked files
+
+git commit -m "Message"
+# Commit staged changes with a message
+
+git commit -am "Message"
+# Add + commit only modified tracked files (no new files)
+
+
+# ---------------------------------------------------------
+# PUSHING & PULLING
+# ---------------------------------------------------------
+
+git pull origin <branch>
+# Download new commits from remote and merge them
+
+git pull --rebase
+# (Preferred) replays local commits on top of remote changes
+
+git push origin <branch>
+# Upload your commits to GitHub
+
+git push origin master --force
+# FORCE push (overwrites remote history) → dangerous, use carefully!
+
+
+# ---------------------------------------------------------
+# BRANCHING
+# ---------------------------------------------------------
+
+git branch
+# List branches
+
+git branch <name>
+# Create new branch
+
+git checkout <name>
+# Move to another branch
+
+git checkout -b <name>
+# Create AND switch to a new branch
+
+git merge <branch>
+# Merge another branch into current one
+
+git branch -d <branch>
+# Delete a branch safely (only if merged)
+
+git branch -D <branch>
+# FORCE delete branch (dangerous)
+
+
+# ---------------------------------------------------------
+# UNDO / FIX MISTAKES
+# ---------------------------------------------------------
+
+git restore <file>
+# Undo changes in working directory
+
+git restore --staged <file>
+# Unstage a file (move from index back to working directory)
+
+git reset --soft HEAD~1
+# Undo last commit BUT keep changes staged
+
+git reset --mixed HEAD~1
+# Undo last commit AND unstage changes (default)
+
+git reset --hard HEAD~1
+# Undo last commit AND delete changes permanently
+
+
+# ---------------------------------------------------------
+# STASHING (TEMPORARY SAVE)
+# ---------------------------------------------------------
+
+git stash
+# Save uncommitted changes temporarily
+
+git stash pop
+# Restore the stash and remove it
+
+git stash list
+# Show all saved stashes
+
+
+# ---------------------------------------------------------
+# CLEANING
+# ---------------------------------------------------------
+
+git clean -n
+# Show which untracked files would be removed
+
+git clean -f
+# Remove untracked files
+
 
 
