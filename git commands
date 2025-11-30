@@ -1,0 +1,4 @@
+ git remote add origin <link> - add repo to your local git
+ git pull origin <branch> - take changes from github
+
+
