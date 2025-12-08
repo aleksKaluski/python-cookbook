@@ -55,3 +55,34 @@ it.groupby([1, 1, 2, 2, 3, 3])
 # group 2 → [2, 2]
 # group 3 → [3, 3]
 # NOTE: input must be pre-sorted for meaningful grouping.
+
+
+# ===========================================================
+# datetime — working with dates and times
+# ===========================================================
+
+from datetime import datetime, date, timedelta
+
+# Current date/time
+now = datetime.now()
+today = date.today()
+
+# Creating a date
+d = date(2024, 5, 17)
+dt = datetime(2024, 5, 17, 14, 30)
+
+# Formatting dates
+dt.strftime("%Y-%m-%d")       # "2024-05-17"
+dt.strftime("%H:%M:%S")
+
+# Parsing from string
+s = "2024-05-17 14:30"
+parsed = datetime.strptime(s, "%Y-%m-%d %H:%M")
+
+# Timedelta (adding/subtracting time)
+tomorrow = today + timedelta(days=1)
+one_hour_later = now + timedelta(hours=1)
+
+# Differences
+delta = datetime(2024,1,1) - datetime(2023,1,1)
+delta.days
