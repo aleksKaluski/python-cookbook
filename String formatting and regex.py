@@ -90,7 +90,7 @@ re.split(r"[- ]", text)
 pattern = re.compile(r"\d{3}")
 pattern.findall(text)
 
-
+# -----------------------------------------------------------
 # Regular Expression Quantifiers:
 #
 # Quantifier | Meaning                   | Example
@@ -104,3 +104,9 @@ pattern.findall(text)
 # {,m}       | Up to m occurrences       | a{,3}b matches b, ab, aab, aaab
 #
 # Note: Append '?' to make a quantifier lazy (e.g., *? or +?).
+
+# -----------------------------------------------------------
+# Greedy and Lazy Maching
+# By default, regular expressions are greedy, meaning they try to match the longest possible string. To switch to lazy
+# mode (matching the shortest possible string), you append an extra question mark (?)
+# to the quantifier (e.g., *?, +?, ??, {n,m}?).
