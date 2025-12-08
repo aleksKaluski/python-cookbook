@@ -123,6 +123,19 @@ pattern.findall(text)
 # Note: Append '?' to a quantifier to make it lazy (e.g., *? or +?).
 
 # -----------------------------------------------------------
+# Examples
+re.findall(r"E\d{3}-\d{2}", text_data) # -> ['E404-01']
+
+re.findall(r"([\w.-]+)@", text_data) # -> ['john.doe', 'alice_smith123', 'tech-support']
+# it ommits @ since @ is outside of caputing group described by ()
+
+re.findall(r"\$\d+\.\d{2}", text_data) # -> ['$12.99']
+# if you want to find special chacarcters such as $ or. use \ or []
+
+
+
+
+# -----------------------------------------------------------
 # Greedy and Lazy Maching
 # By default, regular expressions are greedy, meaning they try to match the longest possible string. To switch to lazy
 # mode (matching the shortest possible string), you append an extra question mark (?)
