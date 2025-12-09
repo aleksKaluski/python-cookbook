@@ -38,6 +38,29 @@ with open("out.csv", "w", newline="") as f:
     writer.writeheader()
     writer.writerows(rows)
 
+# ===========================================================
+# Reading / Writing TXT
+# ===========================================================
+
+# Reading TXT file (entire content as a single string)
+with open("document.txt", "r", encoding="utf-8") as f:
+    text_content = f.read()
+
+# Reading TXT file (content as a list of lines)
+with open("document.txt", "r", encoding="utf-8") as f:
+    lines_list = f.readlines()
+    # Optional: Strip newline characters from each line
+    # lines_list = [line.strip() for line in lines_list]
+
+# Writing TXT file (overwrites the file)
+output_content = "This is the first line.\n" + "This is the second line."
+with open("output.txt", "w", encoding="utf-8") as f:
+    f.write(output_content)
+
+# Appending to a TXT file (adds to the end)
+append_content = "\nThis line is appended."
+with open("output.txt", "a", encoding="utf-8") as f:
+    f.write(append_content)
 
 # ===========================================================
 # Reading / Writing JSON
