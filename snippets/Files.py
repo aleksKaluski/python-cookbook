@@ -52,6 +52,9 @@ with open("document.txt", "r", encoding="utf-8") as f:
     # Optional: Strip newline characters from each line
     # lines_list = [line.strip() for line in lines_list]
 
+# if you fail to open a file with "r" mode FileNotFoundError is raised!
+
+
 # Writing TXT file (overwrites the file)
 output_content = "This is the first line.\n" + "This is the second line."
 with open("output.txt", "w", encoding="utf-8") as f:
@@ -79,6 +82,7 @@ with open("out.json", "w", encoding="utf-8") as f:
 # Converting Python <-> JSON strings
 json_str = json.dumps(data)       # Python → JSON string
 py_obj = json.loads(json_str)     # JSON string → Python object
+
 
 
 

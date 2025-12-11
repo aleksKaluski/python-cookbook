@@ -26,3 +26,7 @@ if r.ok:
     print("Success")
 else:
     print("Error:", r.status_code)
+
+# example: send a GET request to: and print the value of the "title" field.
+r = requests.get("https://jsonplaceholder.typicode.com/todos/1")
+print(r.json()["title"])

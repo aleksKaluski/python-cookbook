@@ -47,6 +47,8 @@ age = 21
 # f-strings (best)
 f"{name} is {age} years old"
 f"{3.14159:.2f}"       # formatting numbers
+# the format specifier :.2f rounds the floating-point number to two
+# decimal places using standard rounding half up rules
 
 # ===========================================================
 # Regular expressions (regex)

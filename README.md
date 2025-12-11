@@ -4,7 +4,7 @@ A collection of concise Python code snippets, examples, and cheat sheets for qui
 
 ## 📚 Topics Covered
 
-### Core Python
+### Core Python - snippets
 - **Classes & OOP**: Basics of classes, inheritance, polymorphism, and magic methods. (`Classes.py`)
 - **Dictionaries**: Operations, comprehensions, and useful methods. (`Dictionaries.py`)
 - **Functions & Lambdas**: `defaultdict`, lambda expressions, and mapping. (`Deafultdict, lambda, mapping.py`)
