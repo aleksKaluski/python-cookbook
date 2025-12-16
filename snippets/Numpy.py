@@ -27,6 +27,14 @@ np.random.rand(3)         # uniform [0,1)
 np.random.randn(3)        # normal distribution
 np.random.randint(0, 10, size=5)
 
+# Examples:
+# Create a (3, 2) array, fill it with 5, and set the data type to float
+matrix_2d = np.full(shape=(3, 2), fill_value=5, dtype=float)
+
+# Select and print a 2x2 sub-array containing the numbers 6, 7, 10, 11.
+basic = np.arange(12)
+basic = basic.reshape(4, 3)
+print(basic[2:4, 0:2])
 
 # =====================================================================
 # Array properties
