@@ -84,6 +84,20 @@ arr[(arr > 10) & (arr < 50)]
 arr[(arr == 10) | (arr == 50)]
 arr[~(arr == 30)]         # Everything except 30
 
+# Examples:
+
+# Given a 4x4 matrix, extract the 2x2 "inner" sub-matrix
+matrix = np.arange(16).reshape(4, 4)
+inner_square = matrix[1:3, 1:3]
+# Slicing from index 1 up to (but not including) index 3
+# selects the middle two elements in both dimensions.
+
+# Extract the scores (2nd column)
+# only for the rows where the score is 80 or higher
+results = np.array([[101, 75], [102, 90], [103, 82], [104, 60]])
+high_scores = results[:, 1] >= 80
+# The first part of the index is a boolean mask for the rows;
+# the second part ', 1' selects the second column.
 # =====================================================================
 # 5. Vectorization & Broadcasting
 # =====================================================================
