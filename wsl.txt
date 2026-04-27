@@ -1,0 +1,198 @@
+WSL – Common & Useful Commands
+==============================
+
+# ---------------------------------------------------------
+# INSTALLATION & UPDATES
+# ---------------------------------------------------------
+
+wsl --install
+# Install WSL and the default distribution (Ubuntu)
+
+wsl --install -d <Distro>
+# Install a specific distribution (e.g., Debian)
+
+wsl --update
+# Update the WSL kernel to the latest version
+
+wsl --status
+# Show the current status of WSL on your machine
+
+
+# ---------------------------------------------------------
+# LISTING DISTRIBUTIONS
+# ---------------------------------------------------------
+
+wsl -l -v
+# List all installed distributions and their WSL versions
+
+wsl -l -o
+# List available Linux distributions you can install online
+
+
+# ---------------------------------------------------------
+# RUNNING WSL
+# ---------------------------------------------------------
+
+wsl
+# Start the default Linux distribution in the current directory
+
+wsl ~
+# Start the default Linux distribution in the Linux home directory
+
+wsl -d <Distro>
+# Start a specific distribution (e.g., wsl -d Debian)
+
+wsl -u <Username>
+# Run WSL as a specific user (e.g., wsl -u root)
+
+wsl --exec <Command>
+# Execute a specific Linux command directly from Windows
+
+
+# ---------------------------------------------------------
+# CONFIGURATION
+# ---------------------------------------------------------
+
+wsl --set-default <Distro>
+# Set a specific installed distribution as your default
+
+wsl --set-version <Distro> 2
+# Change a specific distro to use WSL version 2 (or 1)
+
+wsl --set-default-version 2
+# Set WSL 2 as the default version for new installations
+
+
+# ---------------------------------------------------------
+# SHUTDOWN & TERMINATION
+# ---------------------------------------------------------
+
+wsl --shutdown
+# Immediately terminate all running distros and the WSL VM
+
+wsl -t <Distro>
+# Terminate a specific running distribution safely
+
+wsl --unregister <Distro>
+# FORCE delete a distro and ALL its data permanently!
+
+
+# ---------------------------------------------------------
+# BACKUP & RESTORE
+# ---------------------------------------------------------
+
+wsl --export <Distro> <Path>
+# Export a distribution to a .tar file (e.g., wsl --export Ubuntu C:\backup.tar)
+
+wsl --import <Distro> <InstallDir> <PathToTar>
+# Import a .tar file as a new distribution
+
+
+# ---------------------------------------------------------
+# FILE SYSTEM INTEGRATION (CROSS-OS ACCESS)
+# ---------------------------------------------------------
+
+explorer.exe .
+# (Run inside Linux) Open the current Linux folder in Windows File Explorer
+
+\\wsl.localhost\
+# (Type in Windows Explorer) Access your Linux file systems from Windows
+
+cd /mnt/c/
+# (Run inside Linux) Navigate to your Windows C: drive
+
+# ---------------------------------------------------------
+# DIRECTORY NAVIGATION
+# ---------------------------------------------------------
+
+pwd
+# Print Working Directory (shows your current folder path)
+
+ls
+# List files and folders in the current directory
+
+ls -la
+# List ALL files (including hidden ones) with detailed permissions and sizes
+
+cd <folder_name>
+# Change directory into the specified folder
+
+cd ..
+# Move up one directory level
+
+cd ~
+# Move instantly to your home directory
+
+cd /
+# Move to the root directory of the entire Linux file system
+
+
+# ---------------------------------------------------------
+# FILE & FOLDER CREATION
+# ---------------------------------------------------------
+
+mkdir <folder_name>
+# Create a new directory (folder)
+
+mkdir -p <folder1>/<folder2>
+# Create nested directories all at once
+
+touch <file_name>
+# Create a new, empty file (or update the timestamp of an existing one)
+
+
+# ---------------------------------------------------------
+# MOVING & COPYING
+# ---------------------------------------------------------
+
+cp <file> <destination>
+# Copy a file to a new location
+
+cp -r <folder> <destination>
+# Copy a folder and all of its contents (recursive)
+
+mv <file_or_folder> <destination>
+# Move a file or folder to a new location
+
+mv <old_name> <new_name>
+# Rename a file or folder (moving it to the same place with a new name)
+
+
+# ---------------------------------------------------------
+# DELETING FILES & FOLDERS
+# ---------------------------------------------------------
+
+rm <file_name>
+# Remove (delete) a file permanently
+
+rm -i <file_name>
+# Remove a file but ask for confirmation first
+
+rmdir <folder_name>
+# Remove an EMPTY directory
+
+rm -r <folder_name>
+# Remove a directory AND all its contents permanently (use with caution!)
+
+rm -rf <folder_name>
+# FORCE remove a directory and contents without asking (dangerous!)
+
+
+# ---------------------------------------------------------
+# VIEWING & EDITING FILES
+# ---------------------------------------------------------
+
+cat <file_name>
+# Print the entire contents of a file to the terminal screen
+
+less <file_name>
+# View the contents of a long file one page at a time (press 'q' to quit)
+
+head <file_name>
+# Show only the first 10 lines of a file
+
+tail <file_name>
+# Show only the last 10 lines of a file
+
+nano <file_name>
+# Open a simple text editor inside the terminal to edit the file
